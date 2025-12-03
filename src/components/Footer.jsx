@@ -1,76 +1,58 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Newsletter from './Newsletter';
 
 const Footer = () => {
   return (
-    <div className="h-[500px] mt-[80px] bg-white md:px-[180px] md:flex flex-wrap md:text-left text-center justify-between">
-      <div>
-        <div className="flex md:justify-start justify-center">
-          <img className="mb-[20px]" src="/Group 44.png" alt="" />
-        </div>
-
-        <div>
-          <h1 className="not-italics font-bold text-[30px] leading-[30px] mb-[16px]">
-            Artic Travels
-          </h1>
-          <p className="not-italics font-[500px] text-[13px] leading-[170%] text-[#00000070] mb-[32px]">
-            Book your trip in minutes, get full <br /> control for much longer.
-          </p>
-        </div>
-
-        <div className="flex md:justify-start justify-center md:mb-[118px] mb-7 gap-[25.42px]">
-          <img src="/Social.png" alt="" />
-          <img src="/Social (1).png" alt="" />
-          <img src="/Social (2).png" alt="" />
-        </div>
-
-        <h1 className="not-italics font-[500px] text-[17px] leading-[209%] text-[#00000080]">
-          © 2022 Arctic Travels - All right reserved.
-        </h1>
-      </div>
-
-      <div className="md:flex md:flex-cols-3 flex-wrap text-center gap-[126px] pt-8 pb-5">
-        {/* ///////////////////////////////////////////////////////////////////////////////////////////////////// */}
-        <div className="mb-7">
-          <h1 className="not-italics font-semibold text-[20px] leading-[21px] text-[#3E86F5] mb-[40px]">
-            Company
-          </h1>
-
-          <div className="not-italics font-[400px] text-[15px] leading-[21px] text-[#031530] md:mb-[175px]">
-            <p className="mb-[20px]">About</p>
-            <p className="mb-[20px]">Careers</p>
-            <p className="mb-[20px]">Mobile</p>
+    <footer className="bg-arctic-800/70 border-t border-arctic-700/40 pt-16 pb-8 text-text-secondary">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="col-span-1 md:col-span-1">
+            <Link to="/" className="text-2xl font-bold text-arctic-ice mb-4 block">Arctic Travels</Link>
+            <p className="text-text-secondary text-sm leading-relaxed">Book your perfect winter getaway with us. We provide the best experiences in the coldest places on Earth.</p>
           </div>
 
-          <h1 className="not-italics font-[500px] text-[17px] leading-[209%] text-[#00000080]">Privacy Policy</h1>
-        </div>
-
-        {/* ///////////////////////////////////////////////////////////////////////////////////////////////////// */}
-        <div className="mb-7">
-          <h1 className="not-italics font-semibold  text-[20px] leading-[21px] text-[#3E86F5] mb-[40px]">
-            Contact
-          </h1>
-          <div className="not-italics font-[400px] text-[15px] leading-[21px] text-[#031530] md:mb-[175px]">
-            <p className="mb-[20px]">FAQ</p>
-            <p className="mb-[20px]">Press</p>
-            <p className="mb-[20px]">Affiliates</p>
+          <div>
+            <h3 className="font-bold text-text-primary mb-4">Company</h3>
+            <ul className="space-y-3 text-text-secondary text-sm">
+              <li><Link to="/about" className="hover:text-arctic-blue transition-colors">About Us</Link></li>
+              <li><Link to="/careers" className="hover:text-arctic-blue transition-colors">Careers</Link></li>
+              <li><Link to="/mobile" className="hover:text-arctic-blue transition-colors">Mobile</Link></li>
+              <li><Link to="/blog" className="hover:text-arctic-blue transition-colors">Blog</Link></li>
+            </ul>
           </div>
 
-          <h1 className="not-italics font-[500px] text-[17px] leading-[209%] text-[#00000080]">Terms of Use</h1>
+          <div>
+            <h3 className="font-bold text-text-primary mb-4">Contact</h3>
+            <ul className="space-y-3 text-text-secondary text-sm">
+              <li><Link to="/support" className="hover:text-arctic-blue transition-colors">Help/FAQ</Link></li>
+              <li><Link to="/press" className="hover:text-arctic-blue transition-colors">Press</Link></li>
+              <li><Link to="/affiliates" className="hover:text-arctic-blue transition-colors">Affiliates</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-text-primary mb-4">More</h3>
+            <ul className="space-y-3 text-text-secondary text-sm">
+              <li><Link to="/airline-fees" className="hover:text-arctic-blue transition-colors">Airline Fees</Link></li>
+              <li><Link to="/airline" className="hover:text-arctic-blue transition-colors">Airline</Link></li>
+              <li><Link to="/tips" className="hover:text-arctic-blue transition-colors">Low Fare Tips</Link></li>
+            </ul>
+          </div>
         </div>
 
-        {/* ///////////////////////////////////////////////////////////////////////////////////////////////////// */}
-        <div className="mb-7">
-          <h1 className="not-italics font-semibold text-[20px] leading-[21px] text-[#3E86F5] mb-[40px]">
-            More
-          </h1>
-          <div className="not-italics font-[400px] text-[15px] leading-[21px] text-[#031530]">
-            <p className="mb-[20px]">Airlines</p>
-            <p className="mb-[20px]">Airfees</p>
-            <p className="mb-[20px]">Lowfare Tips</p>
+        <div className="border-t border-arctic-700/40 pt-8 flex items-center justify-between gap-6">
+          <p className="text-text-secondary text-sm">© {new Date().getFullYear()} Arctic Travels. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <div className="hidden md:block w-96"><Newsletter /></div>
+            <div className="flex space-x-4 text-text-secondary">
+              <a href="#" aria-label="Instagram" className="hover:text-arctic-blue">📸</a>
+              <a href="#" aria-label="Twitter" className="hover:text-arctic-blue">🐦</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
